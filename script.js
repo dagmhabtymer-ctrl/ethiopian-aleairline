@@ -211,9 +211,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (currentPage === 'payment.html') {
         console.log('Payment page loaded');
         
-        const paymentAmount = localStorage.getItem('paymentAmount') || '500';
+        // Set payment amount to 700 ETB (matches your HTML)
+        localStorage.setItem('paymentAmount', '700');
         const amountDisplay = document.getElementById('paymentAmount');
-        if (amountDisplay) amountDisplay.textContent = paymentAmount + ' ETB';
+        if (amountDisplay) {
+            amountDisplay.textContent = '700 ETB';
+        }
         
         // Disable confirm button initially
         const confirmBtn = document.getElementById('confirmPaymentBtn');
@@ -252,7 +255,7 @@ function selectPayment(method) {
     if (mpesaDetails) mpesaDetails.style.display = 'none';
     if (bankDetails) bankDetails.style.display = 'none';
     
-    // Show selected details
+    // Show selected details based on method
     if (method === 'telebirr' && telebirrDetails) {
         telebirrDetails.style.display = 'block';
     } else if (method === 'mpesa' && mpesaDetails) {
@@ -286,7 +289,7 @@ function confirmPayment() {
         let payments = JSON.parse(localStorage.getItem('payments') || '[]');
         payments.push({
             phone: phone,
-            amount: 500,
+            amount: 700, // Updated to 700 ETB
             method: method,
             date: new Date().toISOString()
         });
@@ -295,7 +298,7 @@ function confirmPayment() {
         // Update applicant payment status
         const currentApplicant = JSON.parse(localStorage.getItem('currentApplicant') || '{}');
         currentApplicant.payment_status = 1;
-        currentApplicant.payment_amount = 500;
+        currentApplicant.payment_amount = 700; // Updated to 700 ETB
         currentApplicant.payment_method = method;
         localStorage.setItem('currentApplicant', JSON.stringify(currentApplicant));
         

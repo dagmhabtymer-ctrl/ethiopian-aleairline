@@ -4,147 +4,679 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment - Ethiopian Airlines Recruitment</title>
-    <link rel="stylesheet" href="style.css">
     <meta name="robots" content="noindex, nofollow">
     <style>
-        .payment-container {
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
         }
-        .amount-box {
-            background: #f0b90b;
-            color: #0b3b5c;
+        
+        body { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
             padding: 20px;
-            text-align: center;
-            border-radius: 8px;
-            margin-bottom: 30px;
         }
-        .amount { font-size: 48px; font-weight: bold; }
-        .payment-options {
-            display: flex;
-            gap: 15px;
+        
+        .header {
+            background: linear-gradient(135deg, #0b3b5c 0%, #1e5a7a 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 5px solid #f0b90b;
+            border-radius: 15px 15px 0 0;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header h2 {
+            font-size: 20px;
+            font-weight: normal;
+            opacity: 0.95;
+        }
+        
+        .payment-container {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .amount-box {
+            background: linear-gradient(135deg, #f0b90b, #ffd700);
+            color: #0b3b5c;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .amount-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255,255,255,0.1);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            20%, 100% { transform: translateX(100%) rotate(45deg); }
+        }
+        
+        .amount-label {
+            font-size: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        .amount {
+            font-size: 72px;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 10px;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .amount-currency {
+            font-size: 24px;
+            margin-left: 10px;
+        }
+        
+        .amount-desc {
+            font-size: 18px;
+            opacity: 0.9;
+            position: relative;
+        }
+        
+        .payment-content {
+            padding: 40px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            color: #0b3b5c;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #f0b90b;
+            display: inline-block;
+        }
+        
+        .payment-subtitle {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        .bank-grid {
+            display: grid;
+            gap: 25px;
             margin: 30px 0;
         }
-        .payment-option {
-            flex: 1;
-            padding: 20px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            text-align: center;
+        
+        .bank-card {
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
-        .payment-option.selected {
+        
+        .bank-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
             border-color: #f0b90b;
-            background: #fff9e6;
         }
+        
+        .bank-card.selected {
+            border-color: #f0b90b;
+            background: linear-gradient(135deg, #fff9e6, #ffffff);
+            box-shadow: 0 10px 20px rgba(240, 185, 11, 0.2);
+        }
+        
+        .bank-card::before {
+            content: '✓';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 24px;
+            height: 24px;
+            background: #4CAF50;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .bank-card.selected::before {
+            opacity: 1;
+        }
+        
+        .bank-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .bank-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #0b3b5c, #1e5a7a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .bank-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: #0b3b5c;
+        }
+        
         .bank-details {
-            background: #f9f9f9;
+            background: white;
+            border-radius: 12px;
             padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            display: none;
+            margin-top: 15px;
+            border: 1px solid #e0e0e0;
         }
+        
         .detail-row {
             display: flex;
-            padding: 10px;
-            border-bottom: 1px solid #eee;
+            align-items: center;
+            padding: 12px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background 0.2s;
         }
-        .detail-label { font-weight: bold; width: 120px; }
+        
+        .detail-row:hover {
+            background: #f8f9fa;
+        }
+        
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: #555;
+            width: 120px;
+            font-size: 14px;
+        }
+        
+        .detail-value {
+            flex: 1;
+            font-family: 'Courier New', monospace;
+            font-size: 18px;
+            font-weight: 600;
+            color: #0b3b5c;
+            letter-spacing: 1px;
+        }
+        
         .copy-btn {
             background: #0b3b5c;
             color: white;
             border: none;
-            padding: 5px 15px;
-            border-radius: 4px;
+            padding: 8px 20px;
+            border-radius: 25px;
             cursor: pointer;
-            margin-left: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-left: 15px;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
         }
-        .btn-confirm {
+        
+        .copy-btn:hover {
             background: #f0b90b;
             color: #0b3b5c;
-            border: none;
-            padding: 15px;
+            transform: scale(1.05);
+        }
+        
+        .copy-btn.copied {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        .telebirr-number {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+        .telebirr-number .number {
+            font-size: 32px;
+            font-weight: 900;
+            color: #0b3b5c;
+            letter-spacing: 2px;
+            margin: 10px 0;
+        }
+        
+        .instructions {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            border-left: 5px solid #f0b90b;
+        }
+        
+        .instructions h4 {
+            color: #0b3b5c;
+            margin-bottom: 15px;
             font-size: 18px;
+        }
+        
+        .instructions ul {
+            list-style: none;
+        }
+        
+        .instructions li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #555;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        
+        .instructions li:last-child {
+            border-bottom: none;
+        }
+        
+        .instructions li::before {
+            content: '📱';
+            position: absolute;
+            left: 0;
+            color: #f0b90b;
+        }
+        
+        .instructions li:nth-child(2)::before {
+            content: '🏦';
+        }
+        
+        .instructions li:nth-child(3)::before {
+            content: '📸';
+        }
+        
+        .instructions li:nth-child(4)::before {
+            content: '📨';
+        }
+        
+        .btn-confirm {
+            background: linear-gradient(135deg, #f0b90b, #ffd700);
+            color: #0b3b5c;
+            border: none;
+            padding: 18px 30px;
+            font-size: 22px;
             font-weight: bold;
-            border-radius: 5px;
+            border-radius: 50px;
             cursor: pointer;
             width: 100%;
             margin-top: 30px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 15px rgba(240, 185, 11, 0.3);
+        }
+        
+        .btn-confirm:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(240, 185, 11, 0.4);
+        }
+        
+        .btn-confirm:disabled {
+            background: #ccc;
+            color: #666;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            font-size: 14px;
+        }
+        
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: none;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+            animation: slideInRight 0.3s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .warning-box i {
+            font-size: 24px;
+        }
+        
+        @media (max-width: 600px) {
+            .amount { font-size: 48px; }
+            .payment-content { padding: 20px; }
+            .detail-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .copy-btn { margin-left: 0; }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Payment / ክፍያ</h1>
-        <h2>Ethiopian Airlines Recruitment Processing Fee</h2>
+    <div class="toast" id="toast">
+        <span>✓</span>
+        <span id="toastMessage">Copied to clipboard!</span>
     </div>
 
     <div class="payment-container">
+        <div class="header">
+            <h1>Payment / ክፍያ</h1>
+            <h2>Ethiopian Airlines Recruitment Processing Fee</h2>
+        </div>
+
         <div class="amount-box">
-            <div style="font-size: 18px;">Processing Fee / የሂደት ክፍያ</div>
-            <div class="amount" id="paymentAmount">500 ETB</div>
+            <div class="amount-label">Processing Fee / የሂደት ክፍያ</div>
+            <div class="amount">
+                700<span class="amount-currency">ETB</span>
+            </div>
+            <div class="amount-desc">Non-refundable processing fee</div>
         </div>
 
-        <h3>Select Payment Method / የክፍያ ዘዴ ይምረጡ</h3>
-        
-        <div class="payment-options">
-            <div class="payment-option" onclick="selectPayment('telebirr')">
-                <div><strong>Telebirr</strong></div>
-                <div>ቴሌብር</div>
+        <div class="payment-content">
+            <div class="warning-box">
+                <span>⚠️</span>
+                <span>Please make payment using any of the methods below and click confirm after payment.</span>
             </div>
-            <div class="payment-option" onclick="selectPayment('mpesa')">
-                <div><strong>MPesa</strong></div>
-                <div>ኤምፔሳ</div>
-            </div>
-            <div class="payment-option" onclick="selectPayment('bank')">
-                <div><strong>Abay Bank</strong></div>
-                <div>አባይ ባንክ</div>
-            </div>
-        </div>
 
-        <!-- Telebirr Details -->
-        <div id="telebirrDetails" class="bank-details">
-            <h4>Telebirr Payment / የቴሌብር ክፍያ</h4>
-            <div class="detail-row">
-                <div class="detail-label">Number / ቁጥር:</div>
-                <div class="detail-value"><strong>09XX-XXX-XXX</strong></div>
-            </div>
-            <p>After payment, click confirm below.</p>
-        </div>
+            <h3 class="section-title">Select Payment Method</h3>
+            <p class="payment-subtitle">Choose your preferred payment option / የክፍያ ዘዴዎን ይምረጡ</p>
 
-        <!-- MPesa Details -->
-        <div id="mpesaDetails" class="bank-details">
-            <h4>MPesa Payment / የኤምፔሳ ክፍያ</h4>
-            <div class="detail-row">
-                <div class="detail-label">Number / ቁጥር:</div>
-                <div class="detail-value"><strong>07XX-XXX-XXX</strong></div>
-            </div>
-        </div>
+            <div class="bank-grid">
+                <!-- Telebirr Option -->
+                <div class="bank-card" onclick="selectPayment('telebirr')">
+                    <div class="bank-header">
+                        <div class="bank-icon">📱</div>
+                        <div class="bank-name">Telebirr</div>
+                    </div>
+                    <div class="telebirr-number">
+                        <div style="color: #666; margin-bottom: 5px;">Dial *127# or use App</div>
+                        <div class="number" id="telebirrNumberDisplay">0985327272</div>
+                        <button class="copy-btn" onclick="copyToClipboard('0985327272', event)">
+                            <span>📋</span> Copy Number
+                        </button>
+                    </div>
+                </div>
 
-        <!-- Bank Details -->
-        <div id="bankDetails" class="bank-details">
-            <h4>Abay Bank Payment / የአባይ ባንክ ክፍያ</h4>
-            <div class="detail-row">
-                <div class="detail-label">Account Name:</div>
-                <div class="detail-value">Ethiopian Airlines Recruitment</div>
-            </div>
-            <div class="detail-row">
-                <div class="detail-label">Account Number:</div>
-                <div class="detail-value"><strong>1000023456789</strong></div>
-            </div>
-        </div>
+                <!-- NIB Bank Option -->
+                <div class="bank-card" onclick="selectPayment('nib')">
+                    <div class="bank-header">
+                        <div class="bank-icon">🏦</div>
+                        <div class="bank-name">NIB Bank</div>
+                    </div>
+                    <div class="bank-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Account Number:</span>
+                            <span class="detail-value" id="nibNumber">7000104624206</span>
+                            <button class="copy-btn" onclick="copyToClipboard('7000104624206', event)">
+                                <span>📋</span> Copy
+                            </button>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Account Name:</span>
+                            <span class="detail-value">Ethiopian Airlines Recruitment</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Bank:</span>
+                            <span class="detail-value">NIB International Bank</span>
+                        </div>
+                    </div>
+                </div>
 
-        <button class="btn-confirm" id="confirmPaymentBtn" disabled onclick="confirmPayment()">I Have Made Payment / ከፍለዋለሁ</button>
+                <!-- Abay Bank Option -->
+                <div class="bank-card" onclick="selectPayment('abay')">
+                    <div class="bank-header">
+                        <div class="bank-icon">🏛️</div>
+                        <div class="bank-name">Abay Bank</div>
+                    </div>
+                    <div class="bank-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Account Number:</span>
+                            <span class="detail-value" id="abayNumber">4631012296320010</span>
+                            <button class="copy-btn" onclick="copyToClipboard('4631012296320010', event)">
+                                <span>📋</span> Copy
+                            </button>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Account Name:</span>
+                            <span class="detail-value">Ethiopian Airlines Recruitment</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Bank:</span>
+                            <span class="detail-value">Abay Bank S.C.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h4>📌 Payment Instructions / የክፍያ መመሪያ</h4>
+                <ul>
+                    <li>For Telebirr: Dial *127# or use the app to send 700 ETB to 0985327272</li>
+                    <li>For Bank Transfer: Deposit 700 ETB to the selected bank account</li>
+                    <li>Take a screenshot of your payment confirmation</li>
+                    <li>Send the screenshot via Telegram to @ETH_AIR_HR_2026</li>
+                </ul>
+            </div>
+
+            <button class="btn-confirm" id="confirmPaymentBtn" disabled onclick="confirmPayment()">
+                ✓ I Have Made Payment / ከፍለዋለሁ
+            </button>
+
+            <p style="text-align: center; margin-top: 20px; color: #999; font-size: 12px;">
+                After confirmation, you will receive medical checkup details within 24 hours
+            </p>
+        </div>
     </div>
 
     <div class="footer">
         <p>© 2026 Ethiopian Airlines Group. Official Training Portal</p>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        let selectedMethod = null;
+        let toastTimeout;
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            
+            toastMessage.textContent = message;
+            toast.style.display = 'flex';
+            
+            if (toastTimeout) clearTimeout(toastTimeout);
+            
+            toastTimeout = setTimeout(() => {
+                toast.style.display = 'none';
+            }, 2000);
+        }
+
+        function copyToClipboard(text, event) {
+            event.stopPropagation();
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = event.target.closest('.copy-btn');
+                const originalText = btn.innerHTML;
+                
+                btn.innerHTML = '<span>✓</span> Copied!';
+                btn.classList.add('copied');
+                
+                showToast(`Copied: ${text}`);
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                alert('Failed to copy. Please select and copy manually.');
+            });
+        }
+
+        function selectPayment(method) {
+            selectedMethod = method;
+            
+            // Remove selected class from all cards
+            document.querySelectorAll('.bank-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked card
+            const clickedCard = event.target.closest('.bank-card');
+            if (clickedCard) clickedCard.classList.add('selected');
+            
+            // Enable confirm button
+            const confirmBtn = document.getElementById('confirmPaymentBtn');
+            confirmBtn.disabled = false;
+            
+            // Show method-specific message
+            let methodName = '';
+            if (method === 'telebirr') methodName = 'Telebirr';
+            else if (method === 'nib') methodName = 'NIB Bank';
+            else if (method === 'abay') methodName = 'Abay Bank';
+            
+            showToast(`${methodName} selected. Please complete your payment.`);
+        }
+
+        function confirmPayment() {
+            if (!selectedMethod) {
+                alert('Please select a payment method first');
+                return;
+            }
+            
+            const phone = localStorage.getItem('currentPhone');
+            
+            if (!phone) {
+                alert('Session expired. Please register again.');
+                window.location.href = 'index.html';
+                return;
+            }
+            
+            // Store payment in localStorage
+            try {
+                let payments = JSON.parse(localStorage.getItem('payments') || '[]');
+                payments.push({
+                    phone: phone,
+                    amount: 700,
+                    method: selectedMethod,
+                    date: new Date().toISOString()
+                });
+                localStorage.setItem('payments', JSON.stringify(payments));
+                
+                // Update applicant payment status
+                const currentApplicant = JSON.parse(localStorage.getItem('currentApplicant') || '{}');
+                currentApplicant.payment_status = 1;
+                currentApplicant.payment_amount = 700;
+                currentApplicant.payment_method = selectedMethod;
+                localStorage.setItem('currentApplicant', JSON.stringify(currentApplicant));
+                
+                console.log('✅ Payment saved:', { phone, amount: 700, method: selectedMethod });
+                
+                // Success message
+                alert('✅ Payment confirmed!\n\nIn this training simulation, you would now:\n1. Receive medical checkup details via Telegram\n2. Pay 1,500 ETB medical fee\n3. Pay 3,000 ETB training deposit');
+                
+                // Redirect to success page
+                window.location.href = 'payment-success.html';
+            } catch (err) {
+                console.error('Payment error:', err);
+                alert('Error processing payment. Please try again.');
+            }
+        }
+
+        // Add keyboard copy support
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'c') {
+                const selection = window.getSelection().toString();
+                if (selection) {
+                    showToast(`Selected text copied!`);
+                }
+            }
+        });
+
+        // Log page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Payment page loaded - Amount: 700 ETB');
+        });
+    </script>
 </body>
 </html>

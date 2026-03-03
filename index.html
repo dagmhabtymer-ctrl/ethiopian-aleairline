@@ -4,11 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>የኢትዮጵያ አየር መንገድ - አዲስ አመልካቾች ምዝገባ | Ethiopian Airlines Recruitment</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Anti-detection meta tags -->
     <meta name="robots" content="noindex, nofollow">
-    <meta name="googlebot" content="noindex, nofollow">
-    <meta name="description" content="Ethiopian Police Force - Official Fraud Awareness Training">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
+        body { background: #f5f5f5; }
+        .header {
+            background: linear-gradient(135deg, #0b3b5c 0%, #1e5a7a 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 5px solid #f0b90b;
+        }
+        .logo { max-width: 200px; margin-bottom: 20px; }
+        .header h1 { font-size: 28px; margin-bottom: 10px; }
+        .header h2 { font-size: 18px; font-weight: normal; opacity: 0.9; }
+        .container { max-width: 800px; margin: 30px auto; padding: 0 20px; }
+        .info-panel {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 5px solid #f0b90b;
+        }
+        .info-panel h3 { color: #0b3b5c; margin-bottom: 15px; }
+        .info-panel ul { list-style: none; }
+        .info-panel li { padding: 8px 0; border-bottom: 1px solid #eee; font-size: 16px; }
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .form-group { margin-bottom: 20px; }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #f0b90b;
+        }
+        small {
+            display: block;
+            margin-top: 5px;
+            color: #666;
+            font-size: 12px;
+        }
+        .terms {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+        .terms input { width: auto; margin-right: 10px; }
+        .terms label { display: inline; font-weight: normal; }
+        .btn-start {
+            background: #f0b90b;
+            color: #0b3b5c;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+        .btn-start:hover { background: #d4a50a; }
+        .error-message {
+            background: #ffebee;
+            color: #c62828;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
     <div class="header">
@@ -27,11 +115,13 @@
                 <li>⏱️ Exam Time: 35 Minutes / 35 ደቂቃ</li>
                 <li>📝 Questions: 30 / 30 ጥያቄዎች</li>
                 <li>✅ Passing Score: 50% (15/30) / 50% (15/30)</li>
-                <li>💰 Processing Fee: 500 ETB (payable after passing)</li>
+                <li>💰 Processing Fee: 700 ETB (payable after passing)</li>
                 <li>🏥 Medical Checkup: 1,500 ETB (after passing)</li>
                 <li>🔁 Training Deposit: 3,000 ETB (refundable)</li>
             </ul>
         </div>
+
+        <div class="error-message" id="errorMessage"></div>
 
         <form id="registrationForm">
             <h3>Personal Information / የግል መረጃ</h3>

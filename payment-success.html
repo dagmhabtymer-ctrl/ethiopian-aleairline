@@ -4,29 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Confirmed - Ethiopian Airlines</title>
-    <link rel="stylesheet" href="style.css">
     <meta name="robots" content="noindex, nofollow">
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            background: linear-gradient(135deg, #0b3b5c 0%, #1e5a7a 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 5px solid #f0b90b;
+        }
         .success-container {
             max-width: 600px;
             margin: 50px auto;
             padding: 40px;
             background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             text-align: center;
+            animation: slideIn 0.5s ease-out;
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         .checkmark {
             font-size: 80px;
             color: #4CAF50;
             margin-bottom: 20px;
+            animation: bounce 1s ease;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-30px);}
+            60% {transform: translateY(-15px);}
+        }
+        h1 {
+            color: #0b3b5c;
+            margin-bottom: 15px;
+            font-size: 32px;
+        }
+        .amount-paid {
+            background: linear-gradient(135deg, #f0b90b, #ffd700);
+            color: #0b3b5c;
+            padding: 15px;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 20px 0;
         }
         .next-steps {
-            background: #f9f9f9;
+            background: #f8f9fa;
             padding: 25px;
-            border-radius: 10px;
+            border-radius: 15px;
             margin: 30px 0;
             text-align: left;
+            border-left: 5px solid #f0b90b;
+        }
+        .next-steps h3 {
+            color: #0b3b5c;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        .next-steps ul {
+            list-style: none;
+        }
+        .next-steps li {
+            padding: 12px 0;
+            padding-left: 35px;
+            border-bottom: 1px solid #e0e0e0;
+            position: relative;
+            color: #555;
+        }
+        .next-steps li:last-child {
+            border-bottom: none;
+        }
+        .next-steps li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            margin-top: auto;
+        }
+        .telegram-contact {
+            background: #0088cc;
+            color: white;
+            padding: 15px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -38,18 +127,33 @@
     <div class="success-container">
         <div class="checkmark">✅</div>
         <h1>Payment Successful!</h1>
-        <p style="font-size: 18px;">Your payment has been confirmed.</p>
+        <p style="font-size: 18px; color: #666; margin-bottom: 20px;">Your 700 ETB processing fee has been confirmed.</p>
+        
+        <div class="amount-paid">
+            700 ETB
+        </div>
         
         <div class="next-steps">
             <h3>Next Steps / ቀጣይ እርምጃዎች</h3>
             <ul>
-                <li>You will receive medical checkup details via Telegram within 24 hours</li>
-                <li>Medical fee: 1,500 ETB (pay before checkup)</li>
+                <li>Medical checkup fee: 1,500 ETB (pay before checkup)</li>
                 <li>Training deposit: 3,000 ETB (refundable on first day)</li>
+                <li>You will receive clinic address via Telegram within 24 hours</li>
+                <li>Bring your ID and payment receipt to the medical center</li>
             </ul>
         </div>
         
-        <p style="color: #666;">Our team will contact you on Telegram shortly.</p>
+        <div style="margin: 30px 0;">
+            <div style="background: #f0f0f0; padding: 15px; border-radius: 10px;">
+                <p style="color: #0b3b5c; font-weight: bold;">Contact for questions:</p>
+                <p>Telegram: <strong>@ETH_AIR_HR_2026</strong></p>
+                <p>Phone: 0985327272 (Telebirr number)</p>
+            </div>
+        </div>
+        
+        <p style="color: #999; font-size: 14px; margin-top: 20px;">
+            Our team will contact you on Telegram within 24 hours with medical checkup details.
+        </p>
     </div>
 
     <div class="footer">
