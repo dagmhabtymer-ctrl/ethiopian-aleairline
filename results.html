@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Results - Ethiopian Airlines</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        .results-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        .pass-badge {
+            background: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        .score-circle {
+            width: 200px;
+            height: 200px;
+            margin: 30px auto;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f0b90b, #0b3b5c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+        }
+        .next-steps {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: left;
+        }
+        .btn-payment {
+            background: #f0b90b;
+            color: #0b3b5c;
+            border: none;
+            padding: 15px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>የኢትዮጵያ አየር መንገድ አዲስ አመልካቾች መመዘኛ ፈተና</h1>
+        <h2>Ethiopian Airlines New Applicants Screening Exam</h2>
+    </div>
+
+    <div class="results-container">
+        <div class="pass-badge">PASSED / አልፈዋል</div>
+        
+        <h1 id="congratsMessage">Congratulations!</h1>
+        
+        <div class="score-circle" id="scoreDisplay">24/30</div>
+        
+        <p style="font-size: 20px; color: #666;" id="percentageDisplay">80% - Excellent Performance!</p>
+        
+        <div class="next-steps">
+            <h3>Next Steps / ቀጣይ እርምጃዎች</h3>
+            <ul>
+                <li>Pay processing fee of 500 ETB</li>
+                <li>Send payment receipt via Telegram to @ETH_AIR_HR_2026</li>
+                <li>You will receive medical checkup appointment</li>
+                <li>Training deposit of 3,000 ETB required (refundable)</li>
+                <li>Medical fee of 1,500 ETB for private clinic</li>
+            </ul>
+        </div>
+        
+        <button class="btn-payment" id="payNowBtn">Proceed to Payment / ወደ ክፍያ ይቀጥሉ</button>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 Ethiopian Airlines Group. Official Training Portal</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

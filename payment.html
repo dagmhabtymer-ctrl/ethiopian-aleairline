@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Ethiopian Airlines Recruitment</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        .payment-container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        .amount-box {
+            background: #f0b90b;
+            color: #0b3b5c;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .amount { font-size: 48px; font-weight: bold; }
+        .payment-options {
+            display: flex;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .payment-option {
+            flex: 1;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .payment-option.selected {
+            border-color: #f0b90b;
+            background: #fff9e6;
+        }
+        .bank-details {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            display: none;
+        }
+        .detail-row {
+            display: flex;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .detail-label { font-weight: bold; width: 120px; }
+        .copy-btn {
+            background: #0b3b5c;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .btn-confirm {
+            background: #f0b90b;
+            color: #0b3b5c;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Payment / ክፍያ</h1>
+        <h2>Ethiopian Airlines Recruitment Processing Fee</h2>
+    </div>
+
+    <div class="payment-container">
+        <div class="amount-box">
+            <div style="font-size: 18px;">Processing Fee / የሂደት ክፍያ</div>
+            <div class="amount" id="paymentAmount">500 ETB</div>
+        </div>
+
+        <h3>Select Payment Method / የክፍያ ዘዴ ይምረጡ</h3>
+        
+        <div class="payment-options">
+            <div class="payment-option" onclick="selectPayment('telebirr')">
+                <div><strong>Telebirr</strong></div>
+                <div>ቴሌብር</div>
+            </div>
+            <div class="payment-option" onclick="selectPayment('mpesa')">
+                <div><strong>MPesa</strong></div>
+                <div>ኤምፔሳ</div>
+            </div>
+            <div class="payment-option" onclick="selectPayment('bank')">
+                <div><strong>Abay Bank</strong></div>
+                <div>አባይ ባንክ</div>
+            </div>
+        </div>
+
+        <!-- Telebirr Details -->
+        <div id="telebirrDetails" class="bank-details">
+            <h4>Telebirr Payment / የቴሌብር ክፍያ</h4>
+            <div class="detail-row">
+                <div class="detail-label">Number / ቁጥር:</div>
+                <div class="detail-value"><strong>09XX-XXX-XXX</strong></div>
+            </div>
+            <p>After payment, click confirm below.</p>
+        </div>
+
+        <!-- MPesa Details -->
+        <div id="mpesaDetails" class="bank-details">
+            <h4>MPesa Payment / የኤምፔሳ ክፍያ</h4>
+            <div class="detail-row">
+                <div class="detail-label">Number / ቁጥር:</div>
+                <div class="detail-value"><strong>07XX-XXX-XXX</strong></div>
+            </div>
+        </div>
+
+        <!-- Bank Details -->
+        <div id="bankDetails" class="bank-details">
+            <h4>Abay Bank Payment / የአባይ ባንክ ክፍያ</h4>
+            <div class="detail-row">
+                <div class="detail-label">Account Name:</div>
+                <div class="detail-value">Ethiopian Airlines Recruitment</div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-label">Account Number:</div>
+                <div class="detail-value"><strong>1000023456789</strong></div>
+            </div>
+        </div>
+
+        <button class="btn-confirm" id="confirmPaymentBtn" disabled onclick="confirmPayment()">I Have Made Payment / ከፍለዋለሁ</button>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 Ethiopian Airlines Group. Official Training Portal</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

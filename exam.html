@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam - Ethiopian Airlines Recruitment</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        .timer { 
+            background: #f0b90b; 
+            color: #0b3b5c; 
+            padding: 15px; 
+            text-align: center; 
+            font-size: 28px; 
+            font-weight: bold; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+        }
+        .question-block { 
+            background: white; 
+            padding: 20px; 
+            margin-bottom: 20px; 
+            border-radius: 8px; 
+            border-left: 4px solid #0b3b5c; 
+        }
+        .options label { 
+            display: block; 
+            padding: 10px; 
+            margin: 5px 0; 
+            background: #f9f9f9; 
+            border-radius: 4px; 
+            cursor: pointer; 
+        }
+        .options label:hover { background: #e9e9e9; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>የኢትዮጵያ አየር መንገድ አዲስ አመልካቾች መመዘኛ ፈተና</h1>
+        <h2>Ethiopian Airlines New Applicants Screening Exam</h2>
+    </div>
+
+    <div class="timer" id="timer">Time Remaining: 35:00</div>
+
+    <div class="container">
+        <form id="examForm">
+            <!-- Question 1 -->
+            <div class="question-block">
+                <div class="question-text">
+                    1. In which year was Ethiopian Airlines founded? 
+                    <small>የኢትዮጵያ አየር መንገድ የተመሰረተው በየትኛው ዓመት ነው?</small>
+                </div>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="A" required> A) 1945</label>
+                    <label><input type="radio" name="q1" value="B"> B) 1960</label>
+                    <label><input type="radio" name="q1" value="C"> C) 1930</label>
+                    <label><input type="radio" name="q1" value="D"> D) 1952</label>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question-block">
+                <div class="question-text">
+                    2. What is the main hub for Ethiopian Airlines?
+                    <small>የኢትዮጵያ አየር መንገድ ዋና ማዕከል የትኛው ነው?</small>
+                </div>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="A" required> A) Dire Dawa</label>
+                    <label><input type="radio" name="q2" value="B"> B) Bole International Airport</label>
+                    <label><input type="radio" name="q2" value="C"> C) Bahir Dar</label>
+                    <label><input type="radio" name="q2" value="D"> D) Gonder</label>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question-block">
+                <div class="question-text">
+                    3. Ethiopian Airlines is a member of which alliance?
+                    <small>የኢትዮጵያ አየር መንገድ የየትኛው ጥምረት አባል ነው?</small>
+                </div>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="A" required> A) SkyTeam</label>
+                    <label><input type="radio" name="q3" value="B"> B) Oneworld</label>
+                    <label><input type="radio" name="q3" value="C"> C) Star Alliance</label>
+                    <label><input type="radio" name="q3" value="D"> D) Emirates Group</label>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question-block">
+                <div class="question-text">
+                    4. What is the 2035 vision of Ethiopian Airlines?
+                    <small>የኢትዮጵያ አየር መንገድ የ2035 ራዕይ ምንድነው?</small>
+                </div>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="A" required> A) Largest in Africa</label>
+                    <label><input type="radio" name="q4" value="B"> B) Leading global aviation group</label>
+                    <label><input type="radio" name="q4" value="C"> C) Fly only to Europe</label>
+                    <label><input type="radio" name="q4" value="D"> D) 50 airplanes</label>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question-block">
+                <div class="question-text">
+                    5. Emperor when airline was established?
+                    <small>አየር መንገዱ ሲመሰረት ንጉሠ ነገሥት ማን ነበሩ?</small>
+                </div>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="A" required> A) Menelik II</label>
+                    <label><input type="radio" name="q5" value="B"> B) Haile Selassie I</label>
+                    <label><input type="radio" name="q5" value="C"> C) Tewodros II</label>
+                    <label><input type="radio" name="q5" value="D"> D) Yohannes IV</label>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question-block">
+                <div class="question-text">
+                    6. Angry passenger about delayed flight?
+                    <small>አንድ መንገደኛ በበረራ መዘግየት ቢቆጣ መጀመሪያ ምን ማድረግ አለብዎት?</small>
+                </div>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="A" required> A) Not your fault</label>
+                    <label><input type="radio" name="q6" value="B"> B) Listen calmly</label>
+                    <label><input type="radio" name="q6" value="C"> C) Ignore them</label>
+                    <label><input type="radio" name="q6" value="D"> D) Call security</label>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question-block">
+                <div class="question-text">
+                    7. "Excellent Customer Service" means?
+                    <small>"ምርጥ የደንበኞች አገልግሎት" ማለት ምን ማለት ነው?</small>
+                </div>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="A" required> A) Only what's asked</label>
+                    <label><input type="radio" name="q7" value="B"> B) Exceeding expectations</label>
+                    <label><input type="radio" name="q7" value="C"> C) Fast but rude</label>
+                    <label><input type="radio" name="q7" value="D"> D) Working alone</label>
+                </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question-block">
+                <div class="question-text">
+                    8. Colleague struggling with heavy bag?
+                    <small>አንድ የሥራ ባልደረባ ከባድ ቦርሳ ይዞ ሲቸገር ቢያዩ ምን ያደርጋሉ?</small>
+                </div>
+                <div class="options">
+                    <label><input type="radio" name="q8" value="A" required> A) Watch them</label>
+                    <label><input type="radio" name="q8" value="B"> B) Ask if need help</label>
+                    <label><input type="radio" name="q8" value="C"> C) Tell them go to gym</label>
+                    <label><input type="radio" name="q8" value="D"> D) Walk away</label>
+                </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question-block">
+                <div class="question-text">
+                    9. Why is grooming/uniform important?
+                    <small>አለባበስና ንጽህና ለምን አስፈላጊ ነው?</small>
+                </div>
+                <div class="options">
+                    <label><input type="radio" name="q9" value="A" required> A) Just a rule</label>
+                    <label><input type="radio" name="q9" value="B"> B) Professional image</label>
+                    <label><input type="radio" name="q9" value="C"> C) Look better</label>
+                    <label><input type="radio" name="q9" value="D"> D) Not important</label>
+                </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question-block">
+                <div class="question-text">
+                    10. Don't know answer to passenger question?
+                    <small>መልስ ለማታውቁት ጥያቄ ምን ይላሉ?</small>
+                </div>
+                <div class="options">
+                    <label><input type="radio" name="q10" value="A" required> A) "I don't know"</label>
+                    <label><input type="radio" name="q10" value="B"> B) "Let me find out"</label>
+                    <label><input type="radio" name="q10" value="C"> C) "Ask someone else"</label>
+                    <label><input type="radio" name="q10" value="D"> D) Make up answer</label>
+                </div>
+            </div>
+
+            <!-- Question 11 -->
+            <div class="question-block">
+                <div class="question-text">11. The plane _____ at 10:00 AM tomorrow.</div>
+                <div class="options">
+                    <label><input type="radio" name="q11" value="A" required> A) leave</label>
+                    <label><input type="radio" name="q11" value="B"> B) leaves</label>
+                    <label><input type="radio" name="q11" value="C"> C) leaving</label>
+                    <label><input type="radio" name="q11" value="D"> D) left</label>
+                </div>
+            </div>
+
+            <!-- Question 12 -->
+            <div class="question-block">
+                <div class="question-text">12. "Punctual" means:</div>
+                <div class="options">
+                    <label><input type="radio" name="q12" value="A" required> A) Being late</label>
+                    <label><input type="radio" name="q12" value="B"> B) Being on time</label>
+                    <label><input type="radio" name="q12" value="C"> C) Being rude</label>
+                    <label><input type="radio" name="q12" value="D"> D) Being happy</label>
+                </div>
+            </div>
+
+            <!-- Question 13 -->
+            <div class="question-block">
+                <div class="question-text">13. Which sentence is correct?</div>
+                <div class="options">
+                    <label><input type="radio" name="q13" value="A" required> A) They is going</label>
+                    <label><input type="radio" name="q13" value="B"> B) They are going</label>
+                    <label><input type="radio" name="q13" value="C"> C) They am going</label>
+                    <label><input type="radio" name="q13" value="D"> D) They goes</label>
+                </div>
+            </div>
+
+            <!-- Question 14 -->
+            <div class="question-block">
+                <div class="question-text">14. Opposite of "Safe":</div>
+                <div class="options">
+                    <label><input type="radio" name="q14" value="A" required> A) Secure</label>
+                    <label><input type="radio" name="q14" value="B"> B) Dangerous</label>
+                    <label><input type="radio" name="q14" value="C"> C) Protected</label>
+                    <label><input type="radio" name="q14" value="D"> D) Fast</label>
+                </div>
+            </div>
+
+            <!-- Question 15 -->
+            <div class="question-block">
+                <div class="question-text">15. Noun in "The pilot flew the plane safely."</div>
+                <div class="options">
+                    <label><input type="radio" name="q15" value="A" required> A) Flew</label>
+                    <label><input type="radio" name="q15" value="B"> B) Safely</label>
+                    <label><input type="radio" name="q15" value="C"> C) Pilot</label>
+                    <label><input type="radio" name="q15" value="D"> D) The</label>
+                </div>
+            </div>
+
+            <!-- Question 16 -->
+            <div class="question-block">
+                <div class="question-text">
+                    16. $200 ticket with 10% discount = ?
+                    <small>200 ዶላር 10% ቅናሽ = ?</small>
+                </div>
+                <div class="options">
+                    <label><input type="radio" name="q16" value="A" required> A) $190</label>
+                    <label><input type="radio" name="q16" value="B"> B) $180</label>
+                    <label><input type="radio" name="q16" value="C"> C) $170</label>
+                    <label><input type="radio" name="q16" value="D"> D) $210</label>
+                </div>
+            </div>
+
+            <!-- Question 17 -->
+            <div class="question-block">
+                <div class="question-text">
+                    17. 50 passengers × 5 buses = ?
+                    <small>50 መንገደኞች × 5 አውቶብስ = ?</small>
+                </div>
+                <div class="options">
+                    <label><input type="radio" name="q17" value="A" required> A) 200</label>
+                    <label><input type="radio" name="q17" value="B"> B) 250</label>
+                    <label><input type="radio" name="q17" value="C"> C) 300</label>
+                    <label><input type="radio" name="q17" value="D"> D) 150</label>
+                </div>
+            </div>
+
+            <!-- Question 18 -->
+            <div class="question-block">
+                <div class="question-text">18. 15 + (10 × 2) = ?</div>
+                <div class="options">
+                    <label><input type="radio" name="q18" value="A" required> A) 50</label>
+                    <label><input type="radio" name="q18" value="B"> B) 35</label>
+                    <label><input type="radio" name="q18" value="C"> C) 25</label>
+                    <label><input type="radio" name="q18" value="D"> D) 45</label>
+                </div>
+            </div>
+
+            <!-- Question 19 -->
+            <div class="question-block">
+                <div class="question-text">
+                    19. 14:00 hours = ?
+                    <small>14፡00 ሰዓት = ?</small>
+                </div>
+                <div class="options">
+                    <label><input type="radio" name="q19" value="A" required> A) 4:00 PM</label>
+                    <label><input type="radio" name="q19" value="B"> B) 12:00 PM</label>
+                    <label><input type="radio" name="q19" value="C"> C) 2:00 PM</label>
+                    <label><input type="radio" name="q19" value="D"> D) 10:00 AM</label>
+                </div>
+            </div>
+
+            <!-- Question 20 -->
+            <div class="question-block">
+                <div class="question-text">
+                    20. 4 pens cost 40 Birr, 1 pen = ?
+                    <small>4 እስክሪብቶ 40 ብር ቢሆን የአንዱ ዋጋ = ?</small>
+                </div>
+                <div class="options">
+                    <label><input type="radio" name="q20" value="A" required> A) 5 Birr</label>
+                    <label><input type="radio" name="q20" value="B"> B) 10 Birr</label>
+                    <label><input type="radio" name="q20" value="C"> C) 8 Birr</label>
+                    <label><input type="radio" name="q20" value="D"> D) 15 Birr</label>
+                </div>
+            </div>
+
+            <!-- Question 21 -->
+            <div class="question-block">
+                <div class="question-text">
+                    21. Hand : Glove :: Foot : _____
+                    <small>እጅ ለጓንት እንደሆነ እግር ለ_____ ነው</small>
+                </div>
+                <div class="options">
+                    <label><input type="radio" name="q21" value="A" required> A) Hat</label>
+                    <label><input type="radio" name="q21" value="B"> B) Sock</label>
+                    <label><input type="radio" name="q21" value="C"> C) Shirt</label>
+                    <label><input type="radio" name="q21" value="D"> D) Ring</label>
+                </div>
+            </div>
+
+            <!-- Question 22 -->
+            <div class="question-block">
+                <div class="question-text">
+                    22. Which does NOT belong?
+                    <small>ከሌሎቹ ጋር የማይመደበው ቃል የትኛው ነው?</small>
+                </div>
+                <div class="options">
+                    <label><input type="radio" name="q22" value="A" required> A) Pilot</label>
+                    <label><input type="radio" name="q22" value="B"> B) Mechanic</label>
+                    <label><input type="radio" name="q22" value="C"> C) Doctor</label>
+                    <label><input type="radio" name="q22" value="D"> D) Cabin Crew</label>
+                </div>
+            </div>
+
+            <!-- Question 23 -->
+            <div class="question-block">
+                <div class="question-text">
+                    23. Today Monday, 2 days ago = ?
+                    <small>ዛሬ ሰኞ ከሆነ ከሁለት ቀን በፊት = ?</small>
+                </div>
+                <div class="options">
+                    <label><input type="radio" name="q23" value="A" required> A) Saturday</label>
+                    <label><input type="radio" name="q23" value="B"> B) Sunday</label>
+                    <label><input type="radio" name="q23" value="C"> C) Tuesday</label>
+                    <label><input type="radio" name="q23" value="D"> D) Friday</label>
+                </div>
+            </div>
+
+            <!-- Question 24 -->
+            <div class="question-block">
+                <div class="question-text">24. Next number: 2, 4, 6, 8, ___</div>
+                <div class="options">
+                    <label><input type="radio" name="q24" value="A" required> A) 9</label>
+                    <label><input type="radio" name="q24" value="B"> B) 10</label>
+                    <label><input type="radio" name="q24" value="C"> C) 12</label>
+                    <label><input type="radio" name="q24" value="D"> D) 11</label>
+                </div>
+            </div>
+
+            <!-- Question 25 -->
+            <div class="question-block">
+                <div class="question-text">25. Order: 1.Landing 2.Take-off 3.Boarding 4.Check-in</div>
+                <div class="options">
+                    <label><input type="radio" name="q25" value="A" required> A) 4,3,2,1</label>
+                    <label><input type="radio" name="q25" value="B"> B) 3,4,1,2</label>
+                    <label><input type="radio" name="q25" value="C"> C) 1,2,3,4</label>
+                    <label><input type="radio" name="q25" value="D"> D) 4,1,2,3</label>
+                </div>
+            </div>
+
+            <!-- Question 26 -->
+            <div class="question-block">
+                <div class="question-text">
+                    26. Why is teamwork important?
+                    <small>በቡድን መስራት ለምን አስፈላጊ ነው?</small>
+                </div>
+                <div class="options">
+                    <label><input type="radio" name="q26" value="A" required> A) Finish faster</label>
+                    <label><input type="radio" name="q26" value="B"> B) Safety & efficiency</label>
+                    <label><input type="radio" name="q26" value="C"> C) Talk with friends</label>
+                    <label><input type="radio" name="q26" value="D"> D) Not important</label>
+                </div>
+            </div>
+
+            <!-- Question 27 -->
+            <div class="question-block">
+                <div class="question-text">
+                    27. Late for work?
+                    <small>ለሥራ የሚዘገዩ ከሆነ ምን ማድረግ አለብዎት?</small>
+                </div>
+                <div class="options">
+                    <label><input type="radio" name="q27" value="A" required> A) Don't show up</label>
+                    <label><input type="radio" name="q27" value="B"> B) Call supervisor</label>
+                    <label><input type="radio" name="q27" value="C"> C) Come quietly</label>
+                    <label><input type="radio" name="q27" value="D"> D) Tell no one</label>
+                </div>
+            </div>
+
+            <!-- Question 28 -->
+            <div class="question-block">
+                <div class="question-text">
+                    28. "Integrity" means?
+                    <small>"ታማኝነት" ማለት ምን ማለት ነው?</small>
+                </div>
+                <div class="options">
+                    <label><input type="radio" name="q28" value="A" required> A) Honest</label>
+                    <label><input type="radio" name="q28" value="B"> B) Wealthy</label>
+                    <label><input type="radio" name="q28" value="C"> C) Strong</label>
+                    <label><input type="radio" name="q28" value="D"> D) Fast</label>
+                </div>
+            </div>
+
+            <!-- Question 29 -->
+            <div class="question-block">
+                <div class="question-text">
+                    29. Safety responsibility?
+                    <small>የደህንነት ኃላፊነት የማን ነው?</small>
+                </div>
+                <div class="options">
+                    <label><input type="radio" name="q29" value="A" required> A) Pilot only</label>
+                    <label><input type="radio" name="q29" value="B"> B) Security only</label>
+                    <label><input type="radio" name="q29" value="C"> C) Every employee</label>
+                    <label><input type="radio" name="q29" value="D"> D) Manager only</label>
+                </div>
+            </div>
+
+            <!-- Question 30 -->
+            <div class="question-block">
+                <div class="question-text">30. Ethiopian motto: "The New Spirit of _____"</div>
+                <div class="options">
+                    <label><input type="radio" name="q30" value="A" required> A) World</label>
+                    <label><input type="radio" name="q30" value="B"> B) Africa</label>
+                    <label><input type="radio" name="q30" value="C"> C) Ethiopia</label>
+                    <label><input type="radio" name="q30" value="D"> D) Aviation</label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-start">Submit Exam / ፈተናውን ያስረክቡ</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 Ethiopian Airlines Group. Official Training Portal</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

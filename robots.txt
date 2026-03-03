@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Crawl-delay: 10
+
+# This is an official police training site
